@@ -8,10 +8,10 @@ df.columns = df.columns.str.strip()
 df.pop("Unnamed: 0")
 
 
-with open("ml/symptoms.json","r") as file:
+with open("symptoms.json","r") as file:
     symptoms = json.loads(file.read())
 
-with open("ml/diseases.json","r") as file:
+with open("diseases.json","r") as file:
     diseases_data = json.loads(file.read())
 
 
