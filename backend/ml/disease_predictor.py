@@ -3,7 +3,7 @@ import pandas as pd
 import json
 
 
-df = pd.read_csv("ml/final_disease_data.csv")
+df = pd.read_csv("final_disease_data.csv")
 df.columns = df.columns.str.strip()
 df.pop("Unnamed: 0")
 
