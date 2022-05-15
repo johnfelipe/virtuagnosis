@@ -3,15 +3,15 @@ import pandas as pd
 import json
 
 
-df = pd.read_csv("final_disease_data.csv")
+df = pd.read_csv("backend/final_disease_data.csv")
 df.columns = df.columns.str.strip()
 df.pop("Unnamed: 0")
 
 
-with open("symptoms.json","r") as file:
+with open("backend/symptoms.json","r") as file:
     symptoms = json.loads(file.read())
 
-with open("diseases.json","r") as file:
+with open("backend/diseases.json","r") as file:
     diseases_data = json.loads(file.read())
 
 

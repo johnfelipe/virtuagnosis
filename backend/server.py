@@ -16,35 +16,35 @@ def home(path):
 
 @app.route("/symptoms",methods=["GET"])
 def symptoms():
-    with open("symptoms.json","r") as file:
+    with open("backend/symptoms.json","r") as file:
         symptoms = json.loads(file.read())
     return {"data":symptoms},200
 
 @app.route("/diseaseinfo",methods=["GET"])
 def disease_info():
-    with open("diseases.json","r") as file:
+    with open("backend/diseases.json","r") as file:
         disease_info = json.loads(file.read())
     return disease_info,200
 
 @app.route("/bodyparts",methods=["GET"])
 def bodyparts():
     body_part_data = {}
-    with open("arm.txt","r") as file:
+    with open("backend/arm.txt","r") as file:
         body_part_data["arms"] = file.read().splitlines()
     
-    with open("face.txt","r") as file:
+    with open("backend/face.txt","r") as file:
         body_part_data["face"] = file.read().splitlines()
 
-    with open("head.txt","r") as file:
+    with open("backend/head.txt","r") as file:
         body_part_data["head"] = file.read().splitlines()
     
-    with open("legs.txt","r") as file:
+    with open("backend/legs.txt","r") as file:
         body_part_data["legs"] = file.read().splitlines()
         
-    with open("lower-body.txt","r") as file:
+    with open("backend/lower-body.txt","r") as file:
         body_part_data["lower_body"] = file.read().splitlines()
     
-    with open("upper-body.txt","r") as file:
+    with open("backend/upper-body.txt","r") as file:
         body_part_data["upper_body"] = file.read().splitlines()
         
     return body_part_data,200
