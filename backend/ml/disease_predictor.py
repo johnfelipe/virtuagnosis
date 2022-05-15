@@ -1,8 +1,6 @@
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import json
-from scipy import spatial
 
 
 df = pd.read_csv("ml/final_disease_data.csv")
