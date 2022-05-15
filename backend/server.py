@@ -1,5 +1,5 @@
 from flask import Flask, request, send_from_directory
-from ml.disease_predictor import find_closest_diseases
+from disease_predictor import find_closest_diseases
 import json
 
 app = Flask(__name__)
@@ -16,13 +16,13 @@ def home(path):
 
 @app.route("/symptoms",methods=["GET"])
 def symptoms():
-    with open("./ml/symptoms.json","r") as file:
+    with open("symptoms.json","r") as file:
         symptoms = json.loads(file.read())
     return {"data":symptoms},200
 
 @app.route("/diseaseinfo",methods=["GET"])
 def disease_info():
-    with open("./ml/diseases.json","r") as file:
+    with open("diseases.json","r") as file:
         disease_info = json.loads(file.read())
     return disease_info,200
 
@@ -62,4 +62,4 @@ def predict_disease():
         
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
