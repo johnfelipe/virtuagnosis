@@ -3,15 +3,15 @@ import pandas as pd
 import json
 
 
-df = pd.read_csv("backend/final_disease_data.csv")
+df = pd.read_csv("../backend/final_disease_data.csv")
 df.columns = df.columns.str.strip()
 df.pop("Unnamed: 0")
 
 
-with open("backend/symptoms.json","r") as file:
+with open("../backend/symptoms.json","r") as file:
     symptoms = json.loads(file.read())
 
-with open("backend/diseases.json","r") as file:
+with open("../backend/diseases.json","r") as file:
     diseases_data = json.loads(file.read())
 
 
@@ -27,5 +27,3 @@ def find_closest_diseases(diseases):
     closest_five_df = df.loc[points.argsort()[::-1][:5]]
     d_names = [name for name in closest_five_df["Disease"]]
     return {name : diseases_data[name] for name in d_names}
-
-
